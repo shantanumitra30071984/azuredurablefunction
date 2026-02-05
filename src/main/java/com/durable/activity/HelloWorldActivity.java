@@ -18,6 +18,7 @@ public class HelloWorldActivity {
 
         context.getLogger().info("🔥 Hello World");
         try (Connection con = DbUtil.getConnection()) {
+            context.getLogger().info("inserting data into DB");
             var ps = con.prepareStatement(
                     "INSERT INTO student(name) VALUES (?)"
             );
